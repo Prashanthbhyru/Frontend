@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid media Quaries</title>
+    <style>
+        .container {
+            display: grid;
+            grid-gap: 1rem;
+            grid-template-areas:
+                'navbar navbar navbar'
+                'section section aside'
+                'footer footer footer';
+
+        }
+
+        @media only screen and (max-width:300px) {
+            body {
+
+                background-color: rgb(255, 0, 0);
+            }.container {
+                grid-template-areas:
+                    'navbar navbar navbar'
+                    'section section section'
+                    'aside aside aside'
+                    'footer footer footer';
+            }
+            aside{
+                display: none;
+                /* here by using display as none  */
+            }
+        }
+
+        @media (min-width:300px) and (max-width:500px) {
+            body {
+                background-color: blue;
+            }
+        }
+
+        @media (min-width: 500px)and (max-width:800px) {
+            body {
+                background-color: yellow;
+            }
+/* here .container is making the changes of yellow color and aside  is changed to another line   */
+            .container {
+                grid-template-areas:
+                    'navbar navbar navbar'
+                    'section section section'
+                    'aside aside aside'
+                    'footer footer footer';
+            }
+        }
+            @media (min-width:800px) {
+                body {
+                    background-color: green;
+                }
+            }
+
+            .border-now {
+                border: 2px soldi black;
+                padding: 10px 23px;
+                background-color: wheat;
+            }
+
+            navbar {
+                grid-area: navbar;
+                text-align: center;
+            }
+
+            section {
+                grid-area: section;
+            }
+
+            aside {
+                grid-area: aside;
+            }
+
+            footer {
+                grid-area: footer;
+                text-align: center;
+            }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <navbar class="border-now"><h2>Home about contact</h2>
+        </navbar>
+        <section class="border-now">
+            <h4>Learn CSS Lorem, ipsum dolor sit amet consectetur adipisicing elit. Soluta modi harum debitis consectetur accusantium non error pariatur reprehenderit dolores? Voluptate impedit corrupti necessitatibus quasi quae quod cumque dolorum cum. Sequi quisquam odit rem laboriosam aut!</h4>
+        </section>
+        <aside class="border-now">
+            <h3>More about me</h3>
+        </aside>
+    </div>
+    <footer class="border-now">
+       Copyright 	&#169; Bhyruprashanth & co. 
+    </footer>
+</body>
+
+</html>
